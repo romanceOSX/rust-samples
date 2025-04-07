@@ -1,0 +1,44 @@
+--> https://doc.rust-lang.org/cargo/index.html
+cargo is rust's package manager
+
+package
+    collection of source files and a Cargo.toml file that describes the package
+    A package has a name and version, this is used for identificaton among other packages
+
+    targets
+        A package contains targets
+        each target is a crate
+
+    The Cargo.toml does the follwoing:
+        - describes the type of crate
+            - binary
+            - library
+        - how each of these crates are built
+        - direct dependencies
+
+    Package root
+        This is where the package's Cargo.toml is located
+
+    Small sized to medium sized rust projects tend to have a single package yet
+    multiple cargo files
+
+Cargo Workspaces
+    In the case of a project needing multiple packages, a cargo workspace could
+    be used
+
+Crate
+    It is either a library or an excecutable program
+    Every target is for a Cargo package is a 'crate'
+    The source code of a crate may be later subdivided into modules
+
+commands
+    cargo new <crate name>
+        creates a new crate, it defaults to --bin
+        use '--lib' to make it a library
+        
+    cargo build
+        it outputs the contents in a build/ directory
+
+    cargo run
+        runs it
+
