@@ -1,0 +1,19 @@
+Slices
+    --> https://doc.rust-lang.org/book/ch04-03-slices.html
+    --> https://doc.rust-lang.org/std/primitive.slice.html
+    --> https://doc.rust-lang.org/rust-by-example/primitives/array.html
+
+    Slices are just runtime pointers
+    They are composed of the following:
+        - a word for pointing to an address
+        - a size of the thing they are pointing to
+
+    They are references because in that way it can be ensured that they can be valid
+    through rust's borrow checker system
+
+    That is why you can think of these as safe runtime pointers
+
+    In contrast to C pointers, the 'size' aspect of it is just a compiler interpretation
+    C pointers at runtime have no size word, they are just an entity in memory whose
+    value points to an address in memory
+
