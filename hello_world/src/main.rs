@@ -1,3 +1,4 @@
+use clap::Parser;
 /*
  * I followed the guide from the CLI book
  *  --> https://rust-cli.github.io/book/index.html
@@ -10,6 +11,7 @@ fn _print_environment_vars() {
     }
 }
 
+#[derive(Parser)]
 struct CliArgument {
     pattern: String,
     path: std::path::PathBuf,
@@ -30,10 +32,16 @@ fn _handle_cli_args() {
     println!("Looking for \"{pattern}\" in {filepath}");
 }
 
+fn _handle_cli_args_clap() {
+    let args = CliArgument::parse();
+    println!("pattern: {:?}, path: {:?}", args.pattern, args.path);
+}
+
 fn main() {
     println!("Hello, world!");
     //_print_environment_vars();
     _print_cli_args();
-    _handle_cli_args();
+    //_handle_cli_args();
+    _handle_cli_args_clap();
 }
 
