@@ -1,0 +1,24 @@
+--> rustup doc --std
+--> https://doc.rust-lang.org/std/index.html
+
+Standard library
+
+Components
+    - std::* modules
+        - standard modules
+        - modules for related constants on primitive types, named the same way as
+          those primitive types
+    - primitive types
+        - These are implicit methods on the primitive types
+        - The standard library implements some default methods on them
+
+        - Note that the standard library also has modules named the same way
+          as some primitive types, these are helper constants and related constants
+    - standard macros
+    - rust prelude
+
+Tour of the library
+    Containers and collections
+
+    Platform abstractions and I/O
+

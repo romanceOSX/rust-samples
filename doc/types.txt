@@ -1,0 +1,9 @@
+Pointer types
+    --> file:///Users/romance/.rustup/toolchains/stable-aarch64-apple-darwin/share/doc/rust/html/reference/types/pointer.html#shared-references-
+
+Rust has pointer types:
+    - references
+    - raw pointers
+    - smart pointers
+        note that these are just custom types, not actual language-integrated pointer types
+
