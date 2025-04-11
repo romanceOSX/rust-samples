@@ -1,6 +1,28 @@
 use std::net::UdpSocket;
 use std::thread::Thread;
 
+/* linked-list sample */
+enum Link<T> {
+    Nil,
+    Some(T, Box<Self>),
+}
+
+struct Link_S<T> {
+    next: Option<Box<Self>>,
+    val: T,
+}
+
+impl<T> Link_S<T> {
+    fn new(val: T) -> Self {
+        Self{next: None, val: val}
+    }
+}
+
+/* linked list test */
+fn _linked_list_test() {
+    let _link = Link_S::new(32);
+}
+
 /* TX thread */
 fn _tx_thread() {
     let socket = UdpSocket::bind("127.0.0.1:12345").unwrap();
@@ -29,5 +51,15 @@ fn main() {
     for thread in thread_list {
         thread.join().unwrap();
     }
+
+    let mut a = [10; 10];
+    //let mut b = &a[..];
+    let c = &mut a[..];
+    //b[1] = 3;
+    //println!("This is a ref to a {:?}", b);
+    let ms = String::from("hey");
+    let mr = &ms;
+    mr.len();
+    mr.len();
 }
 
