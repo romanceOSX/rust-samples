@@ -1,0 +1,6 @@
+--> https://doc.rust-lang.org/book/ch10-02-traits.html
+
+Generics features:
+    - conditionally implement functions for specific traits through trait bounds
+    - return trait objects from functions trhough dyn
+    
