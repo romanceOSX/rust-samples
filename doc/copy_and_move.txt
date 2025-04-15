@@ -1,0 +1,12 @@
+--> https://stackoverflow.com/questions/24253344/is-it-possible-to-make-a-type-only-movable-and-not-copyable
+
+
+Clone trait
+--> https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#variables-and-data-interacting-with-clone
+    let b = a.clone();
+
+Move trait
+Copy trait
+Copy Trait
+Move Trait
+
