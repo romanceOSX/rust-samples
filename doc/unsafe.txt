@@ -1,0 +1,19 @@
+--> https://doc.rust-lang.org/book/ch20-01-unsafe-rust.html
+unsafe rust
+
+in an unsafe block we can do the following
+    - dereference a raw pointer
+    - call an unsafe function or method
+    - acess or modify a mutable static variable
+    - implement an unsafe trait
+    - access fields of a union
+
+null pointers
+    *const T -> is like int const* in C
+    *mut T -> is like int* in C
+
+    - allowed to ignore borrow checker rules
+    - aren't guaranteed to point to valid memory
+    - can be null
+    - don't implement any type of cleanup
+
