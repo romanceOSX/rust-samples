@@ -65,32 +65,38 @@ trait Interface {
     fn print_info(&self);
 }
 
-struct InterfacePnet<'a> {
-    iface: &'a pnet::datalink::NetworkInterface,
+struct InterfacePnet {
+    iface: pnet::datalink::NetworkInterface,
 }
 
-impl<'a> InterfacePnet<'a> {
-    fn new(pnet_iface: &'a pnet::datalink::NetworkInterface) -> Self {
+impl InterfacePnet {
+    fn new(pnet_iface: pnet::datalink::NetworkInterface) -> Self {
         Self {
             iface: pnet_iface,
         }
     }
+
+    fn get_ifaces() -> Vec<pnet::datalink::NetworkInterface> {
+        pnet::datalink::interfaces()
+    }
 }
 
-impl<'a> Interface for InterfacePnet<'a> {
+impl Interface for InterfacePnet {
     fn print_info(&self) {
         println!("Helloo!");
     }
 }
 
-fn interfaces<'a>() -> Vec<Box<dyn Interface>> {
+fn interfaces() -> Vec<Box<dyn Interface>> {
     /* construct vector of interfaces */
     let mut interfaces: Vec<Box<dyn Interface>> = Vec::new();
+    /* allocate network interface */
+    let mut iface_list = pnet::datalink::interfaces();
+
     interfaces.push(
         Box::new(
             InterfacePnet {
-                /* datalink::interfaces() creates an stack-allocated object */
-                //iface: &pnet::datalink::interfaces().get(0).unwrap(),
+                iface: iface_list.remove(0),
             }
         )
     );
@@ -119,7 +125,12 @@ fn _test_pnet() {
     }
 
     let vec = vec![1, 2, 3, 4, 5];
-    print!("This is the first thing {}", _test_vector_references(&vec))
+    println!("This is the first thing {}", _test_vector_references(&vec));
+
+    let ifaces = interfaces();
+    for iface in ifaces {
+        iface.print_info();
+    }
 }
 
 
