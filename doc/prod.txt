@@ -1,0 +1,73 @@
+Project setup
+    trunk base development
+        --> https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development
+
+    gitflow vs trunk-based development
+        
+    rustup
+        rustup is a toolchain management tool
+            a toolchain management tool concerns with the compilation and release
+
+        rustup toolchain list
+        rustup update
+        
+Inner Development Loop
+    the time it takes from compiling to running the project
+    this considering test-cases and any CI/CD checks
+
+    Linking
+            Linking time is a rust problem...
+            Linking takes the most time in the compilation process
+            'lld', by LLVM is better, we can add it as a cargo flag
+
+    cargo watch
+        a nifty tool that builds the project for every file-change
+            cargo watch -x check
+
+Continuous Integration
+    Testing
+        coverage
+                It is the percentage that tells you how much code has been tested
+                As in, how many subroutines have been 'covered' by the test
+            cargo tarpaulin
+                --> https://github.com/xd009642/tarpaulin
+                cargo tarpaulin
+
+        linting
+            lsp vs linting
+                --> https://www.reddit.com/r/neovim/comments/1amo8l6/what_is_the_difference_between_lsp_and_linting/
+                linting points out idiomatic code, not semantics
+                often functionallity overlaps
+            **How do I disable clippy
+
+            cargo clippy -- -D warnings
+
+            --> https://doc.rust-lang.org/clippy/
+
+        formatter
+            --> https://github.com/rust-lang/rustfmt
+
+            cargo fmt -- --check
+
+        security vulnerabilities
+                cargo install cargo-audit
+                cargo audit
+            This scans the dependency tree
+
+    github actions
+        --> https://gist.github.com/LukeMathWalker/5ae1107432ce283310c3e601fac915f3
+
+Building a newsletter
+    SaaS
+        What you are buying with SaaS is the fact that there is an engineering
+        team working just entirely to keep that service running
+
+    User Stories
+        A a...
+            the affected user
+        I want to..
+            the specific actions the user wants to perform
+        So that...
+            the underlying motives
+
+
