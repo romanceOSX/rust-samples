@@ -3,6 +3,10 @@
 use std::fs::File;
 use std::io::{self, ErrorKind, Read};
 
+fn test_even_shorter_version() -> Result<String, io::Error> {
+    std::fs::read_to_string("Hello.txt")
+}
+
 fn test_propagating_errors() -> Result<String, io::Error> {
     let mut username_str = String::new();
 

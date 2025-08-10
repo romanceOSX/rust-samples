@@ -26,3 +26,9 @@ Unwrapping
     Error::unwrap
     Error::expect
         same as unwrap but we can declare an error message
+
+? operator
+    This operator makes the function to return the err hen failing, and returning
+    the unwrapped Ok value to the expression if succesfull
+    The ? operator calls the From trait's from function
+
