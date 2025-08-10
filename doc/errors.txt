@@ -1,0 +1,28 @@
+--> file:///Users/romance/.rustup/toolchains/stable-aarch64-apple-darwin/share/doc/rust/html/book/ch09-00-error-handling.html
+
+There are two types of errors
+    - unrecoverable (panic!)
+    - recoverable (Result<T, E>)
+
+Usualy a programming language does not distinguish between both
+instead rust tries to seggregate them
+
+Ways of causing panic
+    - Calling the panic! macro
+    - Making the program panic by doing something illegal
+
+They do the following by default (in order):
+    - print a failure
+    - unwind the stack
+    - clean up the stack
+    - quit
+
+We can tweak the behavior when aborting through cargo
+
+Matching is cool, but we can achieve the same behavior through closures and the
+Result<T, E>
+
+Unwrapping
+    Error::unwrap
+    Error::expect
+        same as unwrap but we can declare an error message
