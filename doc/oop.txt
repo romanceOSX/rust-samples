@@ -26,3 +26,9 @@ Inheritance as a Type System and code sharing
 Why are impl's separated from the struct/enums definitions
     It has to do with traits
 
+Trait objects
+    - allow us to not care about the specific type
+    - rust does not perform static dispatch on them
+    - rust disables the monomorphization that happens with trait bounds
+    - we now have to watch out about performance and the 'dyn compatibility'
+
