@@ -1,0 +1,28 @@
+--> file:///Users/romance/.rustup/toolchains/stable-aarch64-apple-darwin/share/doc/rust/html/book/ch18-00-oop.html
+
+
+Objects contain data and behaviour
+    - not called 'objects' but it is achievable through structs and impl's
+
+Encapsulation
+    - it is available through pub's and modules
+
+Inheritance as a Type System and code sharing
+    In rust there is no way to define a struct that inherits the parent's struct
+    fields and methods (macro-less)
+
+    Though you can use a default trait method and re-defining it within a type
+
+    Rust's take on poly:
+        - often share way too much info
+
+    One of the goals of inheritance is to achieve polymorphism
+    This can be done through bounded generics and trait objects
+    
+    Traits
+        They are not called object because objects usually mean data + methods
+        Traits in the other hand are not allowed to have data
+
+Why are impl's separated from the struct/enums definitions
+    It has to do with traits
+
