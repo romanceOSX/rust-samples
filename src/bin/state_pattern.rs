@@ -7,7 +7,9 @@
  * - Only published blog posts return the content to print 
  */
 
+// TODO: compare this implementation to the enum's
 mod blog;
+mod rust_blog;
 
 use blog::Post;
 
@@ -24,8 +26,20 @@ fn test_first_approach() {
     assert_eq!("I ate a Super Salad's Santa Fe salad", post.content());
 }
 
+
+use rust_blog::PostRust;
+
+fn test_rust_approach() {
+    let mut post = PostRust::new();
+    post.add_text("This is a post");
+    let post = post.request_review();
+    let post = post.approve();
+    println!("Printing the post's content \"{}\"", post.content());
+}
+
 fn main() {
     test_first_approach();
+    test_rust_approach();
     println!("testing state pattern");
 }
 
