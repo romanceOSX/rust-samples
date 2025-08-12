@@ -1,3 +1,4 @@
+#[allow(unused)]
 
 /* Public API */
 trait Draw {
