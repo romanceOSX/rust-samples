@@ -38,4 +38,28 @@ Where do they appear?
         
     in some places the patterns need to be refutable, in other irrefutable
 
+Refutability
+    - irrefutable
+        patterns that will match no matter the value
+        The follwoing expressions only accept irrefutable patterns:
+            - let statements
+            - for loops
+        Why is that? because rust can't do anything useful if those patterns don't match
 
+    - refutable
+        patterns that can fail
+
+    match arms should use refutable patterns except for the last one, which can match
+    anything making the match exhaustive
+
+let-else vs iflet, match
+    The scope of the bindings within an let-else is within the enclosing scope,
+    in contrast to the match or if-let
+
+    The use case for an iflet is if for example we want to bring a variable out of
+    a value to the current scope and only care for that specific case
+
+Using patterns
+    match
+        - we use '|' to match multiple values in the same branch
+        - we can also use a range if the value type allows us to do so by doing "start ..= end"
