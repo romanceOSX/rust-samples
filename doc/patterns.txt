@@ -1,3 +1,41 @@
 --> file:///Users/romance/.rustup/toolchains/stable-aarch64-apple-darwin/share/doc/rust/html/book/ch19-00-patterns.html
 
+pattern
+    It consist of a combination of the following
+        - literals
+        - destructed arrays, enums, structs, or tuples
+        - variables
+        - wildcards
+        - placeholders
+
+    a pattern describes the shape of data
+
+    to use a pattern we have to compare it to some value
+    If the value matches the pattern, we are now able to use the value parts in the code
+
+    refutable vs irrefutable
+
+Where do they appear?
+    - matches
+        - they have to be exaustive
+    - if let
+        - a shorter way to write a match that only matches one case
+
+    match vs if let
+        In match we can only compare to one value, in the other hand, an iflet can
+        compare to anything, even unrelated stuff
+
+    - while let
+
+    - for loops
+        the value directly after the 'for' is a pattern
+        'for x in y', x is the pattern
+
+    - let statements
+        let PATTERN = EXPRESSION;
+        
+    - function parameters   
+        
+    in some places the patterns need to be refutable, in other irrefutable
+
 
