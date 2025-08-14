@@ -32,3 +32,9 @@ Unwrapping
     the unwrapped Ok value to the expression if succesfull
     The ? operator calls the From trait's from function
 
+panic or error
+    Overall returning an error gives the calling code the responsability of calling
+    new code
+
+    In sample code or tests is more appropiate to write functions that panic
+    rather than returning an error
