@@ -7,3 +7,38 @@ Rust has pointer types:
     - smart pointers
         note that these are just custom types, not actual language-integrated pointer types
 
+array
+    just a fixed size of contiguous data
+
+slice '[T]'
+    It is a dynamically view into a contiguous sequence
+    they are composed of:
+        - pointer to some bytes
+        - length
+
+string type 'str'
+    str is a string slice, almost always seen as its borrowable form
+    It has two components:
+        - pointer to some bytes
+        - length
+    It always points to valid UTF-8 encoded chars
+
+
+DST's (Dynamically Sized Types)
+    --> https://doc.rust-lang.org/nomicon/exotic-sizes.html
+    These are types whose size is not known at compile time
+    They can only exist within a pointer
+    And pointers to them become fat pointers
+    There are two major DSTs exposed by the core language
+        - trait objects (dyn MyTrait)
+        - slices
+            - [T]
+            - str
+
+    trait object
+        The exact type of the trait is erased
+        It is instead replaced with a vtable containing everything needed
+        to work with the type at runtime (its interface)
+        The information that completes the trait object type is the vtable pointer
+        The runtime size of the type can be dynamically requested from the vtable
+
