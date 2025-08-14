@@ -61,5 +61,9 @@ fn main() {
     let mr = &ms;
     mr.len();
     mr.len();
+
+    let val = 9;
+    let boxed_val = Box::new(val);
+
 }
 
