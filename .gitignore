@@ -1,2 +1,7 @@
 **/target/
 fundamentals/target/*
+
+
+# Added by cargo
+
+/target
