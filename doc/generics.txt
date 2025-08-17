@@ -4,3 +4,20 @@ Generics features:
     - conditionally implement functions for specific traits through trait bounds
     - return trait objects from functions trhough dyn
     
+blanket traits
+    --> file:///Users/romance/.rustup/toolchains/stable-aarch64-apple-darwin/share/doc/rust/html/book/ch10-02-traits.html
+    A blanket trait it makes a type to implement a certain trait if that type implements
+    the decalred trait bounds, it is declared the following way
+
+        impl<T: Display> ToString for T {
+            // --snip--
+        }
+
+lifetimes
+    - &'a u32
+    lifetimes is all about relating lifetimes of parameters with the lifetime of
+    a returning reference
+
+todo
+    TODO: review mutability and bindings
+
