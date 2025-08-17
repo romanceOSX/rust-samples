@@ -21,3 +21,14 @@ lifetimes
 todo
     TODO: review mutability and bindings
 
+Lifetime rules, these apply to fn's and impl's
+    one rule for input parameters
+    second and third rule are for output params
+    1- each parameter will get a lifetime
+    2- if there is a single input reference, all outputs will get its lifetime
+    3- if one of the input is &self or &mut self, then all output refs get its lifetime
+        This third rule implies that no references returned from a method should outlive
+        the current object
+        This might not be the case in some special scenarios, but it is the assumed thing
+    
+
