@@ -1,6 +1,21 @@
 use std::ptr::read_unaligned;
 
-fn parse_header(bytes: &[u8]) {
+#[repr(packed)]
+struct Foo {
+    a: i32,
+}
+
+fn parse_header(bytes: &[u8]) -> Foo {
+    assert!(bytes.len() >= std::mem::size_of::<Foo>());
+    unsafe {
+        /* creates a copy, not actually edits the underlying struct */
+        std::ptr::read_unaligned(bytes.as_ptr() as *const Foo)
+    }
+}
+
+/* get a slice, return a reference to that slice but as a Foo struct */
+fn cast_to_stub(bytes: &[u8]) -> Foo {
+
 }
 
 fn main() {
@@ -20,9 +35,12 @@ fn main() {
     println!("Printing complete vector {:?}", v);
     println!("First half: {:?}", a);
     println!("Second half: {:?}", b);
+
+    /* type punning test */
+    let rv = &v;
 }
 
-fn split_at_mut(slice: &mut [i32], val: usize) -> (&mut [i32], &mut [i32]) {
-    (&mut slice[..val], &mut slice[val..])
-}
+//fn split_at_mut(slice: &mut [i32], val: usize) -> (&mut [i32], &mut [i32]) {
+//    //(&mut slice[..val], &mut slice[val..])
+//}
 
