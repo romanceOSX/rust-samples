@@ -23,32 +23,30 @@ fn test_std_net() {
     //std::option;
 }
 
-use std::fmt::Debug;
-
-fn print_iterator<T>(val: T)
-where 
-    T: IntoIterator,
-    T: Debug,
-{
-    for i in val.into_iter() {
-        sldkfj
-        println!("Value: {:?}", i);
-    }
+fn get_longest<'a>(a: &'a str, b: &'a str) -> &'a str {
+    if a.len() > b.len() { a } else { b }
 }
 
-fn test_some_iterator() {
-    let a = Some(21 as u32);
-    for i in a.into_iter() {
-        println!("{i}");
+fn test_lifetimes() {
+    let res;
+
+    {
+        let a = String::from("this is longggggg");
+        let b = String::from("short");
+        res = get_longest(&a, &b);
     }
 
-    // testing with user-defined struct
-    let m = Some(MyStruct::new());
-    m.into_iter();
+    /* 
+     * The compiler does not really care about the lifetime of the res binding,
+     * at the end it only assigns it the lifetime of one of the input arguments,
+     * if the binding uses it outside the lifetime of the assigned variable then it is an error
+     */
+    //println!("{res}");
 }
 
 fn main() {
-    test_some_iterator();
+    //test_some_iterator();
     test_std_net();
+    test_lifetimes();
 }
 
