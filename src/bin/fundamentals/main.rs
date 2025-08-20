@@ -110,8 +110,16 @@ fn test_prev() {
     println!("Running fundamentals");
 }
 
+fn test_strings() {
+    let s = String::from("Hey");
+    for c in s.bytes() {
+        println!("{c}");
+    }
+}
+
 fn main() {
-    test_iters();
-    test_deref_coercions_method_calls();
+    test_strings();
+    //test_iters();
+    //test_deref_coercions_method_calls();
 }
 
