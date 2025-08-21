@@ -78,7 +78,22 @@ fn run_async() {
     })
 }
 
+fn test_async_message_passing() {
+    let run = async {
+        let (tx, mut rx) = trpl::channel();
+
+        let val = String::from("hi");
+        tx.send(val).unwrap();
+
+        let received = rx.recv().await.unwrap();
+        println!("Got: {received}");
+    };
+
+    trpl::run(run);
+}
+
 fn main() {
+    test_async_message_passing();
     test_spawning_tasks();
     run_async();
     println!("Running on main")
