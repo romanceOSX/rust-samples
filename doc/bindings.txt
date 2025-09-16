@@ -1,0 +1,16 @@
+--> ???
+--> https://doc.rust-lang.org/reference/variables.html
+--> https://doc.rust-lang.org/reference/patterns.html#identifier-patterns
+--> https://doc.rust-lang.org/nomicon/borrow-splitting.html#bindings
+
+Bindings in rust
+    When using the let statement we introduce a binding
+    Doing a 'let mut' introduces a binding with the following charasteristics:
+        - it can be imutably borrowed
+        - it can be mutably borrowed
+
+    doing a 'let' alone
+        - it can be imutably borrowed
+
+    Both bindings can move the object
+
