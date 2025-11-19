@@ -117,6 +117,17 @@ fn test_strings() {
     }
 }
 
+fn borrow_mut(a: Vec<i32>) {
+}
+
+fn test_mut() {
+    let mut v = vec![1, 2, 3, 4, 5];
+    let _vr = &mut v[1..2];
+
+    let a = vec![1, 2, 3, 4];
+    borrow_mut(a);
+}
+
 fn main() {
     test_strings();
     //test_iters();
