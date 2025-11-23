@@ -1,0 +1,8 @@
+post
+    - state
+    - content (&str: 'static)
+
+    state:
+        get_content
+            self.is_approved()?
+
