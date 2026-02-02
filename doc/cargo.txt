@@ -42,3 +42,25 @@ commands
     cargo run
         runs it
 
+2026-02-01
+-->  file:///Users/romance/.rustup/toolchains/stable-aarch64-apple-darwin/share/doc/rust/html/cargo/guide/why-cargo-exists.html
+
+//
+// Packages
+//
+By default rustc only outputs crates, which are either an executable or a library
+Cargo introduces the concept of packages for better package dependency management and 
+package manager concepts
+
+A package is just a bunch of source files with a manifest file
+A package can only declare a single library ('[lib]')
+The name of such library will be the name of the package where the dashes will be replaced with
+underscores
+
+//
+// Modules
+//
+This is a concept independent of packages, it is a construct within a single crate
+^Is there any official documentation on rust's modules
+
+
